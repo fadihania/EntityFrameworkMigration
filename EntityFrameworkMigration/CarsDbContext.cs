@@ -12,3 +12,11 @@ public class CarsDbContext : DbContext
 
     public DbSet<Car> Cars { get; set; }
 }
+
+// Apply migration:
+// 1) Install EF tools:
+//      dotnet tool install --global dotnet-ef
+// 2) Create new Migration:
+//      dotnet ef migrations add CarsTable
+// 3) Update migration to DB:
+//      dotnet ef database update
