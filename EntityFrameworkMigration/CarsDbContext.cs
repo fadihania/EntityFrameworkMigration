@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EntityFrameworkMigration.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace EntityFrameworkMigration;
 
@@ -8,4 +9,6 @@ public class CarsDbContext : DbContext
     {
         optionsBuilder.UseSqlite("Data Source=cars.db");
     }
+
+    public DbSet<Car> Cars { get; set; }
 }
