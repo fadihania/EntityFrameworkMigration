@@ -28,14 +28,17 @@ var db = new CarsDbContext();
 
 
 // Delete
-var carToDelete = db.Cars.FirstOrDefault(c => c.Id == 3);
-db.Cars.Remove(carToDelete);
-await db.SaveChangesAsync();
+//var carToDelete = db.Cars.FirstOrDefault(c => c.Id == 3);
+//db.Cars.Remove(carToDelete);
+//await db.SaveChangesAsync();
 
 
 // Query
-var allCars = db.Cars.ToList();
-foreach (var car in allCars)
+//var allCars = db.Cars.ToList();
+var carsAfter2020 = db.Cars
+    .Where(c => c.ProductionYear > 2020)
+    .ToList();
+foreach (var car in carsAfter2020)
 {
     Console.WriteLine(car);
 }
