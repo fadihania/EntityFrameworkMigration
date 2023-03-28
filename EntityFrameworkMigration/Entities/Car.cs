@@ -1,6 +1,6 @@
 ﻿namespace EntityFrameworkMigration.Entities;
 
-public class Car
+public record Car
 {
     public int Id { get; set; }
     public string Maker { get; set; }
