@@ -22,8 +22,14 @@ var db = new CarsDbContext();
 
 
 // Update
-var carToUpdate = db.Cars.FirstOrDefault(c => c.Id == 3);
-carToUpdate.ProductionYear = 2017;
+//var carToUpdate = db.Cars.FirstOrDefault(c => c.Id == 3);
+//carToUpdate.ProductionYear = 2017;
+//await db.SaveChangesAsync();
+
+
+// Delete
+var carToDelete = db.Cars.FirstOrDefault(c => c.Id == 3);
+db.Cars.Remove(carToDelete);
 await db.SaveChangesAsync();
 
 
