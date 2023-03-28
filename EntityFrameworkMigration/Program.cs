@@ -12,12 +12,18 @@ var db = new CarsDbContext();
 //});
 //await db.SaveChangesAsync();
 
-db.Cars.AddRange(new Car[]
-{
-    new Car { Maker = "Fiat", Model = "Punto", ProductionYear = 2021 },
-    new Car { Maker = "KIA", Model = "Sorento", ProductionYear = 2018 },
-    new Car { Maker = "Mercedes", Model = "S-Class", ProductionYear = 2023 },
-});
+//db.Cars.AddRange(new Car[]
+//{
+//    new Car { Maker = "Fiat", Model = "Punto", ProductionYear = 2021 },
+//    new Car { Maker = "KIA", Model = "Sorento", ProductionYear = 2018 },
+//    new Car { Maker = "Mercedes", Model = "S-Class", ProductionYear = 2023 },
+//});
+//await db.SaveChangesAsync();
+
+
+// Update
+var carToUpdate = db.Cars.FirstOrDefault(c => c.Id == 3);
+carToUpdate.ProductionYear = 2017;
 await db.SaveChangesAsync();
 
 
